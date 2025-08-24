@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, Grad
 
 # ---------------- Streamlit Config ----------------
 st.set_page_config(page_title="Advanced Auto ML", layout="wide")
-st.title("Advanced Auto ML Data Analyst - Robust & Notebook Style")
+st.title("Advanced Auto ML Data Analyst ")
 
 # ---------------- File Upload ----------------
 uploaded_file = st.file_uploader("Upload CSV or Excel", type=["csv", "xlsx"])
@@ -197,3 +197,4 @@ if uploaded_file:
                 best_model = models[best_model_name][0].fit(X_train, y_train) if not models[best_model_name][1] else GridSearchCV(models[best_model_name][0], models[best_model_name][1], cv=cv_strategy).fit(X_train, y_train).best_estimator_
                 preds_best = best_model.predict(X_test)
                 cm = confusion_matrix
+
